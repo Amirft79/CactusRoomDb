@@ -7,12 +7,7 @@ import ir.cactus.cactusroomdb.entity.User
 class UserRepository(private val userDao:UserDao) {
 
     val readAllData:LiveData<List<User>> =userDao.readAllUsers()
-
     suspend fun addUser(user:User){
         userDao.addUser(user)
-
-
-
-
     }
 }

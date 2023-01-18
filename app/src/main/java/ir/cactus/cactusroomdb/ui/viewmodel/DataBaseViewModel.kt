@@ -25,8 +25,7 @@ class DataBaseViewModel(application:Application) :AndroidViewModel(application) 
 
     fun addUser(user:User){
         viewModelScope.launch(Dispatchers.IO) {
-
-
+            repository.addUser(user)
 
 
         }

@@ -6,14 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import ir.cactus.cactusroomdb.R
 import ir.cactus.cactusroomdb.databinding.FragmentListBinding
+import ir.cactus.cactusroomdb.ui.viewmodel.DataBaseViewModel
 
 
 class ListFragment : Fragment() {
 
     private var _Binding:FragmentListBinding?=null
     private val binding get() = _Binding!!
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +29,10 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _Binding=FragmentListBinding.inflate(layoutInflater)
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_addFragment)
+        }
         return binding.root
     }
 
