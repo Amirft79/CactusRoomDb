@@ -7,52 +7,54 @@
     tools:context=".ui.AddFragment">
 
 
-    <EditText
-        android:id="@+id/editTextTextFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="FirstName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextLastName"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextLastName"
-        android:layout_width="213dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="LastName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextAge"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextFirstName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextFirstName" />
-
-    <EditText
-        android:id="@+id/editTextTextAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Age"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextLastName"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextLastName"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextLastName" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="263dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="32dp"
-        android:text="Add"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextAge" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <EditText
+            android:id="@+id/editTextTextFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="firstname"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/editTextTextLastName"
+            android:layout_width="213dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:hint="lastname"
+            android:inputType="textPersonName"
+
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/editTextTextAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="age"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="263dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="32dp"
+            android:text="Add" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
