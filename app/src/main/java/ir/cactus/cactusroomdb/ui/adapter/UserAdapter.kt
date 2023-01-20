@@ -3,10 +3,12 @@ package ir.cactus.cactusroomdb.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import ir.cactus.cactusroomdb.R
 import ir.cactus.cactusroomdb.databinding.CustomLayoutBinding
 import ir.cactus.cactusroomdb.entity.User
+import ir.cactus.cactusroomdb.ui.ListFragmentDirections
 
 class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
@@ -38,6 +40,12 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         holder.binding.tvFirstName.text=currentItem.firstName.toString()
         holder.binding.tvLastName.text=currentItem.lastName.toString()
         holder.binding.tvAge.text=currentItem.age.toString()
+        holder.binding.userLayout.setOnClickListener {
+
+            val action= ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+
+        }
 
     }
 

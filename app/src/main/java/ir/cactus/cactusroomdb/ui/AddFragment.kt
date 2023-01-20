@@ -40,7 +40,7 @@ class AddFragment : Fragment() {
         viewModel=ViewModelProvider(this).get(DataBaseViewModel::class.java)
 
         binding.button.setOnClickListener {
-            val firstName=binding.editTextTextFirstName.text.toString()
+            val firstName=binding.UpdateeditTextTextFirstName.text.toString()
             val lastName=binding.editTextTextLastName.text.toString()
             val age=binding.editTextTextAge.text
             if(inputCheck(firstName,lastName,age)){
