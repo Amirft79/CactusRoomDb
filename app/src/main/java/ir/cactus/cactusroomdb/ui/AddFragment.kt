@@ -46,7 +46,7 @@ class AddFragment : Fragment() {
             if(inputCheck(firstName,lastName,age)){
                 val user=User(0,firstName,lastName,Integer.parseInt(age.toString()))
                 viewModel.addUser(user)
-                Toast.makeText(requireContext(),"user added",Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(),"user added${user.user_id}",Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_addFragment_to_listFragment)
             }else{
                 Toast.makeText(requireContext(),"please enter the full parameter !!",Toast.LENGTH_LONG).show()

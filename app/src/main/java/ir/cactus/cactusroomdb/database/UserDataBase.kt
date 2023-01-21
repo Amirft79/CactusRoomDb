@@ -9,7 +9,6 @@ import ir.cactus.cactusroomdb.entity.User
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class UserDataBase:RoomDatabase() {
     abstract fun userDao():UserDao
-
     companion object{
         @Volatile
         private var INSTANCE:UserDataBase?=null

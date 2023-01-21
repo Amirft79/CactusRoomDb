@@ -16,6 +16,10 @@ interface UserDao {
 
     @Update
     suspend fun updateUser(user:User)
+    @Delete(entity = User::class)
+    suspend fun deleteUser(user:User)
 
+    @Query("DELETE FROM user_table")
 
+    suspend fun deleteAllUser()
 }

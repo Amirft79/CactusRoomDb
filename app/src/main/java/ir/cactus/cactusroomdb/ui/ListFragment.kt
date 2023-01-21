@@ -1,10 +1,10 @@
 package ir.cactus.cactusroomdb.ui
 
+import android.app.AlertDialog
 import android.os.Binder
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -52,7 +52,37 @@ class ListFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
+        adapter.notifyDataSetChanged()
+        setHasOptionsMenu(true)
+
         return binding.root
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_main,menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId==R.id.main_menu){
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val bulider= AlertDialog.Builder(requireContext())
+        bulider.setPositiveButton("yes"){_,_->
+            userViewModel.deleteAllUsers()
+            Toast.makeText(requireContext(),"delete user", Toast.LENGTH_LONG).show()
+        }.setNegativeButton("no"){_,_->
+
+        }.setTitle("Delete ?")
+            .setMessage("are you sure you want to delete !")
+            .create().show()
+    }
+
 
 }
